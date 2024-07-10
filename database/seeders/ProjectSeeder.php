@@ -30,15 +30,15 @@ class ProjectSeeder extends Seeder
         $faker = Faker::create();
         $manager = User::inRandomOrder()->first();
         for ($i = 0; $i < 5; $i++) {
-            Project::create([
+            $projcet = Project::create([
                 'name' => $faker->randomElement($projects),
                 'description' => $faker->randomElement($descriptions),
                 'status' => 'active',
                 'start_date' => $faker->dateTimeThisYear(),
                 'end_date' => $faker->dateTimeThisYear,
                 'project_manager' => $manager->id,
-                'people' => $users
             ]);
+            $projcet->users()->attach($users);
         }
     }
 }

@@ -16,12 +16,12 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        for ($i = 0; $i < 2; $i++) {
+        for ($i = 0; $i < 26; $i++) {
             User::create([
                 'name' => $faker->name,
                 'first_name' => $faker->firstName,
                 'last_name' => $faker->lastName,
-                'email' => $faker->name,
+                'email' => $faker->email,
                 'salutation' => $faker->randomElement(['Mr', 'Ms', 'Mrs', 'Dr']),
                 'phone' => $faker->phoneNumber,
                 'password' => bcrypt('password'),

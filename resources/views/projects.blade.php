@@ -13,8 +13,9 @@
         <!-- Card Blog -->
         <div class="max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
             <!-- Grid -->
+
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach($user->managedProjects as $project)
+                @foreach($user->projects()->get() as $project)
                     <!-- Card -->
                     <div class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl">
                         <div class="h-52 flex flex-col justify-center items-center bg-blue-600 rounded-t-xl">

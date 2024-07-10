@@ -18,8 +18,8 @@ class OrganisationSeeder extends Seeder
         $users = User::inRandomOrder()->limit(3)->get()->pluck('id')->toArray();
         $faker = Faker::create();
         $manager = User::inRandomOrder()->first();
-        for ($i = 0; $i < 20; $i++) {
-            Organisation::create([
+        for ($i = 0; $i < 6; $i++) {
+            $organisation = Organisation::create([
                 'name' => $faker->company,
                 'description' => $faker->companySuffix,
                 'status' => 'active',
@@ -29,8 +29,8 @@ class OrganisationSeeder extends Seeder
                 'state' => $faker->state,
                 'country' => $faker->country,
                 'zip_code' => $faker->postcode,
-                'people' => $users
             ]);
+            $organisation->users()->attach($users);
         }
     }
 }
