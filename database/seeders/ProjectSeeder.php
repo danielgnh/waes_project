@@ -25,6 +25,7 @@ class ProjectSeeder extends Seeder
             'Implementing machine learning algorithms to solve real-world problems.',
             'Migrating existing infrastructure to the cloud for scalability and efficiency.'
         ];
+        $users = User::inRandomOrder()->limit(3)->get()->pluck('id')->toArray();
 
         $faker = Faker::create();
         $manager = User::inRandomOrder()->first();
@@ -36,6 +37,7 @@ class ProjectSeeder extends Seeder
                 'start_date' => $faker->dateTimeThisYear(),
                 'end_date' => $faker->dateTimeThisYear,
                 'project_manager' => $manager->id,
+                'people' => $users
             ]);
         }
     }
