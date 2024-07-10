@@ -22,6 +22,7 @@ class Organisation extends Model implements HasMedia
         'zip_code',
         'country',
         'address',
+        'zip_code',
         'website',
     ];
 
