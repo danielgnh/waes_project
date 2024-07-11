@@ -106,7 +106,7 @@ class ProjectResource extends Resource
                     ->label('Status')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('project_manager')
+                Tables\Columns\TextColumn::make('manager.email')
                     ->label('Project Manager')
                     ->searchable()
                     ->sortable(),
