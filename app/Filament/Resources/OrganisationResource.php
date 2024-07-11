@@ -121,7 +121,7 @@ class OrganisationResource extends Resource
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status')
-                    ->label('Start Date')
+                    ->label('Status')
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('manager.email')
